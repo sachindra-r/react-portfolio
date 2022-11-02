@@ -1,13 +1,16 @@
 import { useEffect, useState } from 'react';
+import Loader from 'react-loaders';
 import { Link } from 'react-router-dom';
 import LogoTitle from '../../assets/images/logo-s.png'
 import AnimatedLetters from '../AnimatedLetters';
 import './index.scss'
+import Developers from '../../assets/images/developers.png'
+
 
 const Home = () => {
     const [letterClass, setLetterClass] = useState('text-animate');
     const nameArray = ['a', 'c', 'h', 'i', 'n', 'd', 'r', 'a'];
-    const jobArray = ['s', 'o', 'f', 't', 'w', 'a', 'r', 'e', ' ', 'd', 'e', 'v', 'e', 'l', 'o', 'p', 'e', 'r', '.'];
+    const jobArray = ['F', 'u', 'l', 'l', ' ', 'S', 't', 'a', 'c', 'k', ' ', 'D', 'e', 'v', 'e', 'l', 'o', 'p', 'e', 'r', '.'];
 
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -18,7 +21,9 @@ const Home = () => {
 
 
     return (
+        <>
         <div className="container home-page">
+        <img src={Developers} className="developers" alt="developers" />
             <div className="text-zone">
                 <h1>
                 <span className={letterClass}>H</span>    
@@ -34,13 +39,16 @@ const Home = () => {
                 <br />
                 <AnimatedLetters letterClass={letterClass}
                 strArray={jobArray}
-                idx={23} />
+                idx={17} />
                 </h1>
                 <h2>Frontend / Backend Developer</h2>
                 <Link to="/contact" className='flat-button'>Contact Me</Link>
+                
             </div>
-
+            
         </div>
+        <Loader />
+        </>
     )
 };
 

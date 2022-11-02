@@ -1,13 +1,19 @@
 import { Outlet } from 'react-router-dom';
 import SideBar from '../Sidebar';
 import './index.scss';
+import Gif from '../../assets/images/giphy.gif'
 
 const Layout = () => {
     return (
     <div className='page'> 
         <SideBar/>
+        <img src={Gif} className="code" alt="background" />
         <div className='page'>
-            <span className='tags top-tags'>&lt;body&gt;</span>
+            <span className='tags top-tags'>&lt;html&gt;
+            <br/>
+            <span>&nbsp;&lt;body&gt;</span>
+            </span>
+            
 
             <Outlet/>
 
